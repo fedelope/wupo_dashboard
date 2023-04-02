@@ -26,7 +26,7 @@ import plotly.graph_objects as go
 dash.register_page(__name__, path='/pages/ar_metrics', name='Metricas de Cartera')
 
 # Read data
-df = pd.read_csv("/Users/federico/Documents/Coding/python/interactive_kpi/dash_env/lib/python3.8/site-packages/auto_KPI_app/data/kpi_platicapp.csv")
+df = pd.read_csv("../data/kpi_platicapp.csv")
 print(df[ :15])
 
 # Layout
