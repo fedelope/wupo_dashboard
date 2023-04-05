@@ -11,7 +11,7 @@ dash.register_page(__name__, path='/pages/elevation_metrics', name='Metricas Ele
 
 z_data = pd.read_csv("/Users/federico/Documents/Coding/python/interactive_kpi/dash_env/lib/python3.8/site-packages/auto_KPI_app/data/elevation.csv")
 #z_data = pd.read_csv('https://github.com/fedelope/wupo_dashboard/blob/3bb81a3d76630665621e19dd5f58bf196db6f9b5/data/elevation.csv')
-z_data = pd.read_csv("data/elevation.csv")
+z_data = pd.read_csv("../data/elevation.csv")
 
 fig = go.Figure(
     data=go.Surface(z=z_data.values),
