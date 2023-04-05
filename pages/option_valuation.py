@@ -67,11 +67,13 @@ layout = html.Div([
             {'label': 'Opción Put', 'value': 'put'}
         ],
         value='call',
-        style={'width': '200px'}
-        
+        style={'width': '200px'}  
     ),
-    dcc.Graph(id='option-valuation-plot', figure=fig,
-              style={'width': '100%', 'height': '500px', 'position': 'absolute'})
+    dcc.Graph(id='option-valuation-plot', 
+            figure=fig,
+            style={'width': '100%', 'height': '100%', 'position': 'center'},
+            config={"displaylogo": False},
+    ),
 ])
 
 @callback(

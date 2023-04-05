@@ -9,15 +9,16 @@ from dash import html
 
 dash.register_page(__name__, path='/pages/elevation_metrics', name='Metricas Elevación')
 
-z_data = pd.read_csv("../data/elevation.csv")
+z_data = pd.read_csv("interactive_kpi/dash_env/lib/python3.8/site-packages/auto_KPI_app/data/elevation.csv")
 
 fig = go.Figure(
     data=go.Surface(z=z_data.values),
     layout=go.Layout(
         title="Elevation",
-        width=900,
+        width=900, 
         height=600,
-    ))
+    )
+)
 
 
 layout = html.Div([

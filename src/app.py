@@ -2,7 +2,6 @@ import sys
 sys.path.append('/Users/federico/Documents/Coding/python/interactive_kpi/dash_env/lib/python3.8/site-packages')
 sys.path.append('/Users/federico/Documents/Coding/python/interactive_kpi/dash_env/lib/python3.8/site-packages/auto_KPI_app')
 
-#export PYTHONPATH=$PYTHONPATH:/dash_env/python3.8/site-packages
 
 import dash
 from dash import html, dcc
@@ -13,25 +12,11 @@ import numpy as np
 import pandas as pd
 
 
-#exportPYTHONPATH=$PYTHONPATH:dash_env/lib/python3.8/site-packages
-
-colors = {
-    'back': '#111111',
-    'card_color': '#FFFFFF',
-    'text': '#7FDBFF',
-    'color_1': '#FFFFFF',
-    'color_2': '#FFFFFF',
-    'color_3': '#FFFFFF',
-    'color_4': '#FFFFFF'
-}
-
-back_color=colors['back'],
-card_color=colors['card_color'],
-font_color=colors['text']
 
 
 app = dash.Dash(__name__, 
                 pages_folder='../pages',
+                assets_folder='../assets',
                 use_pages=True, 
                 external_stylesheets=[dbc.themes.SPACELAB],#SUPERHERO], #SPACELAB, #SOLAR                
                 suppress_callback_exceptions=True,
@@ -57,13 +42,15 @@ sidebar = dbc.Nav(
             ],
             vertical=True,
             pills=True,
-            className="me-1",        
+            className="me-1",                   
 )
 
-logo_wupo = 'wupo_logo.png'
+
+
+logo_wupo = app.get_asset_url('Wupo_logo.png')
 
 #app_dir = os.path.dirname(os.path.abspath(__file__))
-#logo_wupo = os.path.join(app_dir, 'assets', 'wupo_logo.png')
+#logo_wupo = os.path.join('..', logo_dir, 'assets', 'wupo_logo.png')
 
 
 app.layout = dbc.Container([
@@ -72,28 +59,28 @@ app.layout = dbc.Container([
             html.Div(
                 html.A(
                     html.Div(
-                        #html.Img(
-                        #    src=app.get_asset_url(logo_wupo),
-                        #    height="150px",
-                        #    width="150px",
-                        #),
-                        html.H1("Wupo"),
-                        style={
-                            'fontSize': 30,
-                            'textAlign': 'center', 
-                            'color': 'gray', 
-                            'margin-top': '0px'
-                        },
-                        className='text-center'
-                    ),
-                href="https://www.wupealo.com"
+                        html.Img(
+                            src=logo_wupo,
+                            height="150px",
+                            width="150px",
+                        ),
+                        #html.H1("Wupo"),
+                        #style={
+                        #    'fontSize': 30,
+                        #    'textAlign': 'center', 
+                        #    'color': 'gray', 
+                        #    'margin-top': '0px'
+                        #},
+                        #className='text-center'
+                    )
                 ),
-            #style={
-            #    'display': 'flex',
-            #    'align-items': 'center',
-            #    'justify-content': 'center',
-            #    'margin-top': '20px'                    
-            #}
+            style={
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'center',
+                'margin-top': '-40px',
+                'margin-bottom': '-25px'                                     
+            }
             ),
 
 
@@ -103,11 +90,20 @@ app.layout = dbc.Container([
                             'fontSize': 30,
                             'textAlign': 'center', 
                             'color': 'gray', 
-                            'margin-top': '0px'
+                            'margin-top': '-50px'
                         },
                     className='text-center'   
-                )
-            
+                ),
+                html.A(
+                    html.P("https://www.wupealo.com"),
+                        style={
+                            'fontSize': 18,
+                            'textAlign': 'center', 
+                            'color': 'light-gray', 
+                            'margin-top': '0px'
+                           },
+                      href="https://www.wupealo.com"   
+                    )    
         ],
         style={ 'justify-content': 'center', 'align-items': 'center'}
         )

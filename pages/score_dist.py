@@ -24,7 +24,7 @@ from scipy.stats import norm
 import plotly.figure_factory as ff
 
 # Read data
-df = pd.read_csv("../data/kpi_platicapp.csv")
+df = pd.read_csv("interactive_kpi/dash_env/lib/python3.8/site-packages/auto_KPI_app/data/kpi_platicapp.csv")
 print(df[ :15])
 
 dash.register_page(__name__, path='/pages/score_dist', name='Distribución SCORE')
@@ -73,7 +73,7 @@ def time_frame_1(term_selected):
     graph_1.update_traces(
         opacity=0.75),
     graph_1.update_layout(
-        title='Distribution of Score',
+        #title='Distribution of Score',
         xaxis_title='Score range',
         yaxis_title='Frequency',
         paper_bgcolor='rgba(0,0,0,0)',
