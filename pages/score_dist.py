@@ -25,7 +25,7 @@ import plotly.figure_factory as ff
 
 # Read data
 
-df = pd.read_csv("/../data/kpi_platicapp.csv")
+df = pd.read_csv("../data/kpi_platicapp.csv")
 print(df[ :15])
 
 dash.register_page(__name__, path='/pages/score_dist', name='Distribución SCORE')

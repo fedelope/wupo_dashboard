@@ -22,7 +22,7 @@ import plotly.graph_objects as go
 dash.register_page(__name__, path='/pages/ar_credits', name='Créditos') # '/' is home page
 
 # page_1 - Macro data
-df = pd.read_csv("/../data/kpi_platicapp.csv")
+df = pd.read_csv("../data/kpi_platicapp.csv")
 print(df[:15])
 
 # converts date_data into pandas format 

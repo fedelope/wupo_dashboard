@@ -9,7 +9,7 @@ from dash import html
 
 dash.register_page(__name__, path='/pages/elevation_metrics', name='Metricas Elevación')
 
-z_data = pd.read_csv("/../data/elevation.csv")
+z_data = pd.read_csv("../data/elevation.csv")
 
 fig = go.Figure(
     data=go.Surface(z=z_data.values),
