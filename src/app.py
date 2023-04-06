@@ -47,10 +47,12 @@ sidebar = dbc.Nav(
 
 
 
-logo_wupo = app.get_asset_url('Wupo_logo.png')
+#logo_wupo = app.get_asset_url('Wupo_logo.png')
+logo_wupo = "../assets/wupo_logo.png"
 
 #app_dir = os.path.dirname(os.path.abspath(__file__))
 #logo_wupo = os.path.join('..', logo_dir, 'assets', 'wupo_logo.png')
+
 
 
 app.layout = dbc.Container([
